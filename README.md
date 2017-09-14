@@ -8,12 +8,11 @@ server to another, there is no downtime visible to the application.
 
 To make the examples work, you'll need:
 
-- You need access to a running PostgreSQL database. **WARNING: Do not use these
-examples with your production database! The programs delete data and are created
-for experiments only.**
-- The haskell stack tool is needed. You can get it from
-  https://haskell-lang.org/get-started
-- Copy SecretExample.hs to Secret.hs, put in the correct connection details and
+- access to a running PostgreSQL database. **WARNING: Do not use these
+examples with your production database! The programs delete data and are only
+for experiments.**
+- haskell stack tool. You can get it from https://haskell-lang.org/get-started
+- copy SecretExample.hs to Secret.hs, put in the correct connection details and
   save the file
 
 ### Running the examples
