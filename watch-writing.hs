@@ -11,4 +11,4 @@ infiniteNumberSequence = [1,2..]
 
 writeNextNumber db n = do
   printf "Writing example number %4d | " n
-  replace db n
+  replaceNumber db n

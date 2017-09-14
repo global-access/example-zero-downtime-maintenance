@@ -5,6 +5,6 @@ import Example
 
 main = do
   db <- establishDbConnection
-  forever $ measureTime (fetchExampleNumberIn db)
+  forever (measureTime (readExampleNumberIn db))
 
-fetchExampleNumberIn db = readEntry db >>= printf "Reading example number %4d | "
+readExampleNumberIn db = readNumber db >>= printf "Reading example number %4d | "

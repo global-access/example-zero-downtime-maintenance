@@ -3,8 +3,8 @@
 module Example (
     forever
   , prepareExample
-  , replace
-  , readEntry
+  , replaceNumber
+  , readNumber
   , measureTime
   , establishDbConnection
   , printf
@@ -32,11 +32,11 @@ prepareExample = do
     insert into example_table (example_number) values (0);
     |] ()
 
-replace :: Connection -> Int -> IO ()
-replace db n = void $ execute db "delete from example_table; insert into example_table (example_number) values (?)" (Only n)
+replaceNumber :: Connection -> Int -> IO ()
+replaceNumber db n = void $ execute db "delete from example_table; insert into example_table (example_number) values (?)" (Only n)
 
 measureTime :: IO a -> IO ()
 measureTime f = elapsedTime f >>= printf "Duration: %8.4f s\n" . snd
 
-readEntry :: Connection -> IO Int
-readEntry db = fromOnly . head <$> query db "select example_number from example_table limit 1" ()
+readNumber :: Connection -> IO Int
+readNumber db = fromOnly . head <$> query db "select example_number from example_table limit 1" ()
