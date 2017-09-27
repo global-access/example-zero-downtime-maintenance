@@ -1,19 +1,21 @@
 ## Example programs to show the zero downtime migration of a VM
 
-These programs are created for an article that will be published shortly on
-http://www.global.de/blog The purpose is to show that when we move VMs from one
-server to another, there is no downtime visible to the application.
+These programs are created for an article about zero-downtime maintenance
+https://www.global.de/en/blog/zero-downtime-maintenance/ It shows that when we
+move VMs from one server to another, there is no percievable downtime to the
+application.
 
 ### Prerequisites
 
 To make the examples work, you'll need:
 
-- access to a running PostgreSQL database. **WARNING: Do not use these
-examples with your production database! The programs delete data and are only
-for experiments.**
+- access to a running PostgreSQL database. **WARNING: Do not use these examples
+with your production database! The programs delete data and are only for
+experiments.**
 - haskell stack tool. You can get it from https://haskell-lang.org/get-started
-- copy SecretExample.hs to Secret.hs, put in the correct connection details and
-  save the file
+- postgresql client development library: libpq
+- and have a copy of SecretExample.hs put to Secret.hs, and enter correct
+connection details
 
 ### Running the examples
 
@@ -23,6 +25,6 @@ for experiments.**
    one entry - a number from an infinite growing sequence
 3. Running `stack watch-reading.hs` parallel to the writing program one can see
    how the number is changing.
-   
+
 Both writing and reading programs print the duration of every operation they
 make so one can see how responsive the database is.
